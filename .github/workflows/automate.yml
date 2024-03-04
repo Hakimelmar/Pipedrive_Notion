@@ -11,13 +11,20 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-        
-      - name: Set up Python
-        uses: actions/setup-python@v3
-        with:
-          python-version: '3.12'
-          
+      steps:
+  - name: Checkout repository
+    uses: actions/checkout@v2
+    with:
+
+  - name: Set up Node.js
+    uses: actions/setup-node@v2
+    with:
+      node-version: '16' # Installeer Node.js 16
+
+  - name: Set up Python
+    uses: actions/setup-python@v3
+    with:
+      python-version: '3.12'
+
       - name: Run Python script
         run: python C:\Users\Trainee\Documents\Python_projects\Pipedrive - Notion\TEST.py
