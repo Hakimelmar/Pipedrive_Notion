@@ -9,14 +9,6 @@ jobs:
   run-script:
     name: Run Python script
     runs-on: ubuntu-latest
-
-    defaults:
-      run:
-        shell: bash
-        working-directory: ${{ github.workspace }}
-        container:
-          image: python:3.12
-          options: --init --tty
     
     steps:
       - name: Checkout repository
