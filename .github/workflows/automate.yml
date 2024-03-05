@@ -20,4 +20,4 @@ jobs:
         
     - name: Run Python script from GitHub
       run: |
-        wget -O script.py https://raw.githubusercontent.com/Hakimelmar/Pipedrive_Notion/main/TEST.py?token=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
+        wget -O script.py https://raw.githubusercontent.com/Hakimelmar/Pipedrive_Notion/main/TEST.py
