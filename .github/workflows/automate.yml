@@ -18,5 +18,7 @@ jobs:
       with:
         python-version: '3.12'
         
-    - name: Run Python script
-      run: python C:/Users/Trainee/Documents/Python_projects/Pipedrive - Notion/TEST.py
+    - name: Run Python script from GitHub
+      run: |
+        wget -O script.py https://raw.githubusercontent.com/<Hakimelmar>/<Pipedrive_Notion>/<main>/<TEST.py>
+        python script.py
