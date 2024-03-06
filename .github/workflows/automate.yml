@@ -2,7 +2,7 @@ name: Run Python script daily
 
 on:
   schedule:
-    - cron: '39 13 * * *' # Elke dag om 13:24 uur
+    - cron: '39 13 * * *' # Elke dag om 13:39 uur
 
 jobs:
   run_script:
