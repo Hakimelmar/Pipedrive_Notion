@@ -21,3 +21,18 @@ jobs:
     - name: Run Python script from GitHub
       run: |
         wget -O script.py https://raw.githubusercontent.com/Hakimelmar/Pipedrive_Notion/main/TEST.py
+
+    - name: Run script
+      run: python script.py
+
+    - name: Email notification
+      if: ${{ failure() }} # Deze stap wordt alleen uitgevoerd als de vorige stappen zijn mislukt
+      uses: dawidd6/action-send-mail@v3
+      with:
+        server_address: smtp.example.com
+        server_port: 587
+        username: ${{ secrets.EMAIL_USERNAME }}
+        password: ${{ secrets.EMAIL_PASSWORD }}
+        subject: 'Automatiseringsstatus'
+        body: 'De automatisering is niet succesvol voltooid.'
+        to: 'ontvanger@example.com'
