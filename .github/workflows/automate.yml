@@ -39,4 +39,5 @@ jobs:
         password: ${{ secrets.EMAIL_PASSWORD }}
         subject: 'Automatiseringsstatus'
         body: 'De automatisering is niet succesvol voltooid.'
+        from: 'hakimelmaruani@newmonday.nl'
         to: 'hakimelmaruani@newmonday.nl'
