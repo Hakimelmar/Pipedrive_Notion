@@ -3,7 +3,7 @@ name: Run Python script daily
 on:
   workflow_dispatch: # Hiermee wordt de workflow handmatig uitvoerbaar
   schedule:
-    - cron: '24 13 * * *' # Elke dag om 13:24 uur
+    - cron: '27 13 * * *' # Elke dag om 13:24 uur
 
 jobs:
   run_script:
