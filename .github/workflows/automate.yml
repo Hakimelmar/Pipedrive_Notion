@@ -18,6 +18,10 @@ jobs:
       with:
         python-version: '3.12'
         
+    - name: Install requests module
+      run: |
+        python -m pip install requests
+
     - name: Run Python script from GitHub
       run: |
         wget -O script.py https://raw.githubusercontent.com/Hakimelmar/Pipedrive_Notion/main/TEST.py
