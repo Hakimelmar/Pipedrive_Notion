@@ -1,0 +1,14 @@
+name: Check Timezone
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  check_timezone:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Check Timezone
+      run: echo "Current time: $(date)"; echo "Timezone: $(date +%Z)"
