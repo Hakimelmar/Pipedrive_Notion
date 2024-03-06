@@ -27,7 +27,7 @@ jobs:
         wget -O script.py https://raw.githubusercontent.com/Hakimelmar/Pipedrive_Notion/main/TEST.py
 
     - name: Run script
-      run: python script.py
+      run: python script.py ${{ secrets.PIPEDRIVE_TOKEN }} ${{ secrets.NOTION_TOKEN }}
 
     - name: Email notification
       if: ${{ failure() }} # Deze stap wordt alleen uitgevoerd als de vorige stappen zijn mislukt
