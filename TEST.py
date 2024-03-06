@@ -8,12 +8,12 @@ notion_api_url = "https://api.notion.com/v1"
 notion_database_id = "ce40cf1499e74454869f8047c97a66e1"
 notion_version = "2022-06-28"
 
-# Haal tokens op uit omgevingsvariabelen
+# Haal tokens op uit GitHub Secrets (omgevingsvariabelen)
 pipedrive_token = os.getenv("PIPEDRIVE_TOKEN")
 notion_token = os.getenv("NOTION_TOKEN")
 
 if not pipedrive_token or not notion_token:
-    print("Zorg ervoor dat PIPEDRIVE_TOKEN en NOTION_TOKEN zijn ingesteld als omgevingsvariabelen.")
+    print("Zorg ervoor dat PIPEDRIVE_TOKEN en NOTION_TOKEN zijn ingesteld als GitHub Secrets.")
     exit(1)
 
 # Functie om gegevens van Pipedrive op te halen
