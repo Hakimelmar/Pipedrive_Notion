@@ -33,7 +33,7 @@ jobs:
         NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
 
     - name: Email notification
-      if: ${{ failure() }} # Deze stap wordt alleen uitgevoerd als de vorige stappen zijn mislukt
+      if: ${{ success() }} # Deze stap wordt alleen uitgevoerd als de vorige stappen zijn gelukt
       uses: dawidd6/action-send-mail@v3
       with:
         server_address: smtp.gmail.com
@@ -41,6 +41,6 @@ jobs:
         username: ${{ secrets.EMAIL_USERNAME }}
         password: ${{ secrets.EMAIL_PASSWORD }}
         subject: 'Automatiseringsstatus'
-        body: 'De automatisering is niet succesvol voltooid.'
+        body: 'De automatisering is succesvol voltooid.'
         from: 'hakimelmaruani@newmonday.nl'
         to: 'hakimelmaruani@newmonday.nl'
