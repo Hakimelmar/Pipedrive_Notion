@@ -3,7 +3,7 @@ name: Run Python script daily
 on:
   workflow_dispatch: # Hiermee wordt de workflow handmatig uitvoerbaar
   schedule:
-    - cron: '16 13 * * *' # Elke dag om 13:16 uur
+    - cron: '24 13 * * *' # Elke dag om 13:24 uur
 
 jobs:
   run_script:
@@ -27,7 +27,10 @@ jobs:
         wget -O script.py https://raw.githubusercontent.com/Hakimelmar/Pipedrive_Notion/main/TEST.py
 
     - name: Run script
-      run: python script.py $PIPEDRIVE_TOKEN $NOTION_TOKEN
+      run: |
+        echo "Starting script..."
+        python script.py $PIPEDRIVE_TOKEN $NOTION_TOKEN
+        echo "Script finished."
       env:
         PIPEDRIVE_TOKEN: ${{ secrets.PIPEDRIVE_TOKEN }}
         NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
