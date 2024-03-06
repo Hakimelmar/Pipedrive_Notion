@@ -12,5 +12,5 @@ jobs:
     steps:
     - name: Check Timezone
       run: |
-        echo "Current time: $(date)"
-        echo "Timezone: $(date +%Z)"
+        echo "Current time: $(TZ=Europe/Amsterdam date)"
+        echo "Timezone: Europe/Amsterdam"
